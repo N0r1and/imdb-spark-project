@@ -16,6 +16,9 @@ from transformation import (
     q6_rating_by_decade
 )
 
+from writing import save_results
+
+
 DATA_PATH = r"C:\Users\PC\Desktop\imdb-data"
 
 spark = SparkSession.builder \
@@ -51,3 +54,6 @@ q5_most_active_actors(dfs)
 q6_rating_by_decade(dfs)
 
 print("\n✅ Трансформація завершена!")
+
+OUTPUT_PATH = r"C:\Users\PC\Desktop\imdb-data\results"
+save_results(dfs, OUTPUT_PATH)
